@@ -1,0 +1,794 @@
+/* FONTS */
+
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* GLOBAL STYLES */
+
+:root {
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: Tahoma, serif;
+  --font-code: 'Roboto', monospace;
+  --bg-color: #1d1d1d;
+  --font-color: #ffffff;
+  --btn-bg-color: #ffffff;
+  --accent-color: #0b61ff;
+  --header-shadow: #000 0px 0px 10px;
+  --inner-shadow: drop-shadow(0 0 10px #0b61ff)
+}
+
+::selection {
+  background-color: #e6e6e663;
+  color: var(--bg-color);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #5c5c5c;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--accent-color);
+}
+
+mark {
+  background-color: #fbcb48;
+  border-radius: 0.5rem;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 2px solid #fbcb48;
+}
+
+/*  Small Decorations  */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+  color: var(--font-color);
+  font-family: var(--font-primary);
+}
+
+.container {
+  max-width: auto;
+  padding: 1rem;
+}
+
+/* HEADER */
+
+header {
+  box-shadow: var(--header-shadow);
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.menu > a > img {
+  width: 25px;
+  transition: all .4s ease;
+}
+
+.menu > a > img:hover {
+  filter: drop-shadow( 0px 0px 10px var(--accent-color));
+  cursor: pointer;
+}
+
+.menu > a > img:active {
+  filter: drop-shadow( 0px 0px 10px var(--accent-color));
+}
+
+/* BUTTONS */
+
+.btn {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: var(--btn-bg-color);
+  color: var(--accent-color);
+  font-family: var(--font-secondary);
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: capitalize;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 5px var(--btn-bg-color);
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+}
+.btn:hover {
+  box-shadow: 0px 0px 10px var(--accent-color);
+}
+
+.wallet-btn {
+  border-radius: 5rem;
+  border-color: transparent;
+}
+
+
+/* COUNTDOWN SECTION */
+
+section {
+  flex: 1 1 auto;
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.countdown ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.countdown h1 {
+  margin: 0.5rem;
+}
+
+.countdown .clock-item {
+  list-style: none;
+  width: 70px;
+  height: auto;
+}
+.countdown .clock-item .count-number {
+  background: var(--accent-color);
+  color: var(--font-color);
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: var(--font-secondary);
+  padding: 1rem;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  border-radius: 4px 4px 0 0;
+}
+.countdown .clock-item .count-text {
+  background: var(--btn-bg-color);
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  color: var(--bg-color);
+  padding: 0.5rem 0.7rem;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 1;
+  border-radius: 0 0 4px 4px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 1rem;
+}
+
+
+@keyframes fade{
+  from{
+    opacity:0.4;
+  }
+  to{
+    opacity:1;
+  }
+}
+
+.slides{
+  position: relative;
+  overflow: hidden;
+  animation: fade .2s linear;
+}
+
+.hero-info {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hero-info h1 {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  width: 85%;
+  margin: 0 0 0.5rem 0;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.hero-info p {
+  width: 65%;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  font-family: var(--font-secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.hero-btn {
+  border-radius: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1.5rem 2rem;
+}
+
+.slides img {
+  margin: 1rem 0px;
+  width: 450px;
+  border-radius: 1rem;
+  border: 2px solid var(--accent-color);
+}
+
+.py-60 {
+  padding: 20px 0;
+}
+
+h2 {
+  font-family: var(--font-code);
+  font-size: 1.5rem;
+  color: var(--font-color);
+  line-height: 1.25;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px var(--accent-color);
+}
+
+.text-control-1 h2 {
+  margin-bottom: 20px;
+}
+
+.q-mark {
+  font-family: var(--font-code);
+  color: #d40119;
+  padding: 18px 0 18px 18px;
+}
+
+.question {
+  font-family: Roboto;
+  font-size: 20px;
+  color: #5c5c5c;
+  line-height: 1.5;
+  padding: 20px;
+  margin-bottom: 0;
+}
+
+.answer {
+  font-size: 16px;
+  color: #5c5c5c;
+  padding: 16px;
+  padding-left: 52px;
+  padding-bottom: 32px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.accordion {
+  color: var(--accent-color);
+  cursor: pointer;
+  width: 100%;
+  margin: 0 5px 20px 0;
+  text-align: left;
+  border: none;
+  border-bottom: 2px solid var(--accent-color);
+  outline: none;
+  transition: 0.4s;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12), 0 1px 3px 0 rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.question-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.question-wrapper p {
+  color: var(--accent-color);
+}
+
+.answer-wrapper {
+  display: none;
+}
+
+.icon-expand {
+  width: 2rem;
+  margin: 0 15px 0 0 ;
+  transition: transform 0.75s ease-in-out;
+}
+
+.active p,
+.accordion:hover .question-wrapper p {
+  color: #3d3d3d;
+}
+
+.py-60 > .text-control-1 {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 992px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0 4rem 0;
+  }
+
+  .hero-info h1 {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 100%;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+  
+}
+
+
+@media only screen and (min-width: 992px) {
+  .slides img {
+    margin: 0 0 0 7rem;
+  }
+  
+  .footer-text {
+    margin: 0 0 0 15px;
+  }
+
+  .roadmap-text {
+    padding: 2rem 7rem 7rem 7rem;
+    font-size: larger;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    gap: 1rem;
+  }
+
+  .countdown h1 {
+    font-size: 2rem;
+  }
+
+  .countdown p {
+    font-size: 1rem;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+
+  .hero-info {
+    transform: scale(0.8);
+    margin: 0;
+  }
+
+  .countdown {
+    transform: scale(0.6);
+  }
+
+  .slides img {
+    max-width: 100%;
+  }
+
+  .py-60 {
+    padding: 10px 0;
+  }
+
+  .accordion {
+    margin-bottom: 16px;
+  }
+
+  .text-control-1 h2 {
+    margin-bottom: 16px;
+  }
+
+  .logo > a > img {
+    width: 75px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .footer-content > div {
+    margin: 10px;
+  }
+}
+
+@media only screen and (max-width: 853px) {
+  .backgrounds-items {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: scale(0.8);
+  }
+  .specs > ul > li {
+    transform: scale(0.8);
+  }
+
+  .roadmap-text {
+    padding: 2rem;
+  }
+
+  .latest-section img {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 853px) {
+  .latest-section img {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .backgrounds-items > div > img {
+    width: 120px;
+  }
+
+  .countdown {
+    transform: scale(0.5);
+  }
+
+  .roadmap-text {
+    padding: 0;
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .nft-ad {
+    font-size: 80%;
+  }
+  .nft-ad h2 {
+    font-size: 110%;
+  }
+  .nft-ad img {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .latest-bulk-images img {
+    width: 200px;
+    margin: 0px 10px 10px 0px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .latest-bulk-images img {
+    width: 350px;
+    margin: 0px 10px 10px 0px;
+  }
+}
+
+.backgrounds {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 0rem 0rem 3.5rem 0rem;
+}
+
+.background-header {
+  margin: 40px 0 0 0;
+  text-align: center;
+}
+
+.backgrounds-items img {
+  width: 150px;
+  margin: 0 10px;
+}
+
+.backgrounds-items {
+  display: flex;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+
+.footer-content {
+  background-color: var(--bg-color);
+  box-shadow: var(--header-shadow);
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  padding: 1.5rem 4rem;
+  font-family: var(--font-secondary);
+}
+
+.footer-img > a > img {
+  width: 3rem;
+  transition: .5s ease;
+}
+
+.footer-img > a > img:hover{
+  filter: drop-shadow(0px 0px 10px red);
+  cursor: pointer;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-text p {
+  text-align: center;
+}
+
+.footer-socials img {
+  width: 1.8rem;
+}
+
+.footer-socials > div > a > img {
+  margin: 8px;
+  transition: .5s ease;
+}
+
+.footer-socials img:hover {
+  filter: var(--inner-shadow);
+  cursor: pointer;
+}
+
+.mint-section {
+  max-width: 100%;
+  margin: 2rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mint-section h2 {
+  margin: 2rem 0;
+}
+
+.roadmap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.roadmap span {
+  color: var(--accent-color);
+  font-size: x-large;
+}
+
+.roadmap p {
+  margin: 0 0 1.5rem 0;
+}
+
+.roadmap-text {
+  font-family: 'MuseoModerno', sans-serif;
+  font-weight: 600;
+}
+
+.roadmap-headline {
+  margin: 5rem 0 0 0;
+}
+
+.scroll-instruction {
+  margin: 4rem 0 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-instruction h3 {
+  margin: 0 0 2.3rem 0;
+}
+
+.scroll-instruction span {
+  position: absolute;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    margin: 0 0 0 0;
+  }
+  50% {
+    margin: 0.7rem 0 0 0;
+  }
+  100% {
+    margin: 0 0 0 0;
+    transition: 0.4s;
+  }
+}
+
+.specs {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 7rem;
+  font-size: larger;
+  background-color: #0b60ffa9;
+  text-align: center;
+}
+
+.specs h2 {
+  margin: 0 0 2.5rem 0;
+}
+
+.specs > ul {
+  display: grid;
+  list-style-type: circle;
+  text-align: center;
+}
+
+.specs > ul > li {
+  background-color: var(--bg-color);
+  margin: 1rem;
+  padding: 10px 15px;
+  border-radius: 1rem;
+  transition: .4s;
+  
+}
+
+.specs > ul > li:hover {
+  cursor: default;
+  list-style: disc;
+  background-color: var(--accent-color);
+}
+
+.nft-ad {
+  margin: 5rem 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nft-ad img {
+  filter: drop-shadow(0 0 0.75rem #9D3DE0);;
+}
+
+.latest-section {
+  margin: 5rem 0 0 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.latest-header {
+  text-align: center;
+  margin: 0 0 2rem 0;
+}
+
+.latest-section img {
+  border: 2px solid var(--accent-color);
+}
+
+.latest-bulk-images {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.latest-header-bulk-images {
+  margin: 2rem 0px 0px 0px;
+}
+
+.latest-section p {
+  margin: 0rem 0rem 2rem 0rem;
+}
+
+.courses-page {  
+  border-radius: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  margin: 1.7rem 0 0 0;
+  padding: 1rem 1.5rem;
+}
+
+
+/*     TSC University Courses Part     */
+
+.brand-content {
+  text-align: center;
+  margin: 0px 0px 1.5rem 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.brand-content img {
+  width: 11rem;
+}
+
+.brand-text-content h1, h3 {
+  text-align: center;
+}
+
+.courses-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.courses-section-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; 
+}
+
+.courses-section-text-content {
+  width: 16.5rem;
+}
+
+.courses-section-text-content > p {
+  margin: 0.5rem 0rem;
+}
+
+.courses-section-content > div > a > img {
+  width: 250px;
+  margin: 10px;
+  transition: .2s ease-in;
+}
+
+.brand-content > .main-paragraph {
+  max-width: 800px;
+  margin: 1rem 0rem;
+}
+
+/* Click on the course -- Call to action */
+.main-header-call {
+  margin: 1rem 0rem;
+}
+
+.courses-section-content > div > a > img:hover {
+  opacity: 0.4;
+}
+
+.brand-content > p {
+  margin: 0.7rem 0rem;
+}
+
+.courses-section  p {
+  font-size: small;
+  text-align: center;
+}
